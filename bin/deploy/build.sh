@@ -71,7 +71,7 @@ fi
 
 echo "工程名：$PROJECT_NAME"
 
-# 2、获取配置文件
+# 2、获取配置文件 按照配置安装对应的依赖包
 fileName="package-config-test"
 
 gitcloneurl="https://github.com/AUW-su/package-config-test.git"
@@ -119,9 +119,7 @@ if [ -s "./${fileName}/.config" ]; then
     
 fi
 
-
-
-
+# 删除本次脚本执行新增的文件
 rm -rf "./test.txt"
 
 rm -rf "./${fileName}"
