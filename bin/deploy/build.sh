@@ -74,6 +74,7 @@ if [ -s "./${fileName}/.config" ]; then
 
     do
     echo ${line}
+    echo "111"
     # echo $PROJECT_NAME
     # if [[ $line =~ "all" ]] || [[ ! -z $PROJECT_NAME && $line =~ $PROJECT_NAME ]]; then
     #     echo "依赖包版本配置文件当前一行的内容：$line"
