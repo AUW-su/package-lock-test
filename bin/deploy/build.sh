@@ -19,40 +19,40 @@ npm install --registry https://registry.npm.taobao.org
 
 # 1、获取当前工程名字 即package.json文件中的name
 
-export PROJECT_NAME=""
+# export PROJECT_NAME=""
 
-if [ -s "./package.json" ]; then
-    echo "-----package.json 文件存在-----"
+# if [ -s "./package.json" ]; then
+#     echo "-----package.json 文件存在-----"
 
-    head -10 "./package.json" > test.txt # 如果找到package.json文件 取其前10行的内容
+#     head -10 "./package.json" > test.txt # 如果找到package.json文件 取其前10行的内容
 
-    while read line
+#     while read line
 
-    do
-    echo "line : $line"
-    if [[ $line =~ "name" ]]; then
+#     do
+#     echo "line : $line"
+#     if [[ $line =~ "name" ]]; then
 
-        # echo $line
+#         # echo $line
         
-        line="$(echo "${line}" | tr -d '[:space:]')" # 去掉空格
+#         line="$(echo "${line}" | tr -d '[:space:]')" # 去掉空格
 
-        IFS=":"
+#         IFS=":"
 
-        array=($line)
+#         array=($line)
 
-        len=${#array[1]}
+#         len=${#array[1]}
 
-        partlen=`expr $len - 1`
+#         partlen=`expr $len - 1`
 
-        PROJECT_NAME=${array[1]: 0: $partlen}
+#         PROJECT_NAME=${array[1]: 0: $partlen}
 
-        break
-    fi
-    done < "./test.txt"
+#         break
+#     fi
+#     done < "./test.txt"
 
-fi
+# fi
 
-echo "-----工程名：$PROJECT_NAME-----"
+# echo "-----工程名：$PROJECT_NAME-----"
 
 # 2、获取配置文件 按照配置安装对应的依赖包
 
