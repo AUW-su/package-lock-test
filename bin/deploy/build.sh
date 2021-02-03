@@ -70,11 +70,11 @@ if [ -s "./${fileName}/.config" ]; then
     echo "-----依赖包版本配置文件有内容-----"
 
     # 开始读配置文件
-    while read line
+    cat "./${fileName}/.config" | while read line
 
     do
     echo ${line}
-    echo $PROJECT_NAME
+    # echo $PROJECT_NAME
     # if [[ $line =~ "all" ]] || [[ ! -z $PROJECT_NAME && $line =~ $PROJECT_NAME ]]; then
     #     echo "依赖包版本配置文件当前一行的内容：$line"
 
@@ -89,7 +89,7 @@ if [ -s "./${fileName}/.config" ]; then
     #     npm install ${array[1]}  --registry https://registry.npm.taobao.org
     # fi
     
-    done < "./${fileName}/.config"
+    done
 fi
 
 # # 3、删除本次脚本执行新增的文件
