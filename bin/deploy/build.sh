@@ -89,6 +89,10 @@ if [ -s "./${fileName}/.config" ]; then
     
     done
 
+    # 删除本次脚本执行新增的文件
+    rm -rf "./test.txt"
+    rm -rf "./${fileName}"
+
     # 判断是否有需要提交的文件的文件
     if [[ "${GIT_STATUS}" == *"nothing to commit"* ]]; then
         echo "-----自动更新依赖包版本 没有可提交的内容-----";
@@ -100,11 +104,6 @@ if [ -s "./${fileName}/.config" ]; then
         git push
     fi
 fi
-
-# 删除本次脚本执行新增的文件
-rm -rf "./test.txt"
-
-rm -rf "./${fileName}"
 
 #----------------------------------------
 
