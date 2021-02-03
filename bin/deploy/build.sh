@@ -111,8 +111,9 @@ if [ -s "./${fileName}/.config" ]; then
     if [[ "${GIT_STATUS}" == *"nothing to commit"* ]]; then
         echo "自动更新依赖包版本 没有可提交的内容";
     else
-        git add package.json
-        git add package-lock.json
+        echo "自动提交diff"
+        git add ./package.json
+        git add ./package-lock.json
         git commit --no-verify -m "build.sh auto commit package.json & package-lock.json";
         git push
     fi
