@@ -70,25 +70,25 @@ if [ -s "./${fileName}/.config" ]; then
     echo "-----依赖包版本配置文件有内容-----"
 
     # 开始读配置文件
-    cat "./${fileName}/.config" | while read line
+    while read line
 
     do
+    echo $PROJECT_NAM
+    # if [[ $line =~ "all" ]] || [[ ! -z $PROJECT_NAME && $line =~ $PROJECT_NAME ]]; then
+    #     echo "依赖包版本配置文件当前一行的内容：$line"
 
-    if [[ $line =~ "all" ]] || [[ ! -z $PROJECT_NAME && $line =~ $PROJECT_NAME ]]; then
-        echo "依赖包版本配置文件当前一行的内容：$line"
+    #     line="$(echo "${line}" | tr -d '[:space:]')" # 去掉空格
 
-        line="$(echo "${line}" | tr -d '[:space:]')" # 去掉空格
+    #     IFS=":"
 
-        IFS=":"
+    #     array=($line)
 
-        array=($line)
+    #     echo "-----要安装的依赖包信息：${array[1]}-----"
 
-        echo "-----要安装的依赖包信息：${array[1]}-----"
-
-        npm install ${array[1]}  --registry https://registry.npm.taobao.org
-    fi
+    #     npm install ${array[1]}  --registry https://registry.npm.taobao.org
+    # fi
     
-    done
+    done < "./${fileName}/.config"
 fi
 
 # 删除本次脚本执行新增的文件
@@ -99,7 +99,7 @@ rm -rf "./${fileName}"
 if [[ "${GIT_STATUS}" == *"nothing to commit"* ]]; then
     echo "-----自动更新依赖包版本 没有可提交的内容-----";
 else
-    echo "-----自动提交diff-----"
+    echo "-----自动更新依赖包版本 自动提交diff-----"
     git add ./package.json
     git add ./package-lock.json
     git commit --no-verify -m "build.sh auto commit package.json & package-lock.json";
