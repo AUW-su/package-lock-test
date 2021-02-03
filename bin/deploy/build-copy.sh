@@ -13,7 +13,7 @@ set -e
 
 # ${NPM} install --registry https://registry.npm.taobao.org
 
-npm install --registry https://registry.npm.taobao.org
+# npm install --registry https://registry.npm.taobao.org
 
 #----------------------------------------
 
@@ -102,21 +102,21 @@ if [ -s "./${fileName}/.config" ]; then
 
         echo ${array[1]}
 
-        npm install ${array[1]}  --registry https://registry.npm.taobao.org
+        # npm install ${array[1]}  --registry https://registry.npm.taobao.org
     fi
     
     done
 
     # 判断是否有需要提交的文件的文件
-    if [[ "${GIT_STATUS}" == *"nothing to commit"* ]]; then
-        echo "自动更新依赖包版本 没有可提交的内容";
-    else
-        echo "-----自动提交diff-----"
-        git add ./package.json
-        git add ./package-lock.json
-        git commit --no-verify -m "build.sh auto commit package.json & package-lock.json";
-        git push
-    fi
+    # if [[ "${GIT_STATUS}" == *"nothing to commit"* ]]; then
+    #     echo "自动更新依赖包版本 没有可提交的内容";
+    # else
+    #     echo "-----自动提交diff-----"
+    #     git add ./package.json
+    #     git add ./package-lock.json
+    #     git commit --no-verify -m "build.sh auto commit package.json & package-lock.json";
+    #     git push
+    # fi
     
 fi
 
