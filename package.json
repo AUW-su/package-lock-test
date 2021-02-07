@@ -18,9 +18,6 @@
   },
   "homepage": "https://github.com/AUW-su/package-lock-test#readme",
   "devDependencies": {
-    "react": "^16.0.0"
-  },
-  "dependencies": {
-    "vue": "^2.0.0"
+    "react": "^15.0.0"
   }
 }
