@@ -8,8 +8,11 @@ https://app.yinxiang.com/fx/d2c9ba27-da72-4c26-969d-6349b2d2b314
 
 https://app.yinxiang.com/fx/7142f44c-b59a-4b89-8ff6-d00e9bf5bd15
 
-### 2、在现有build.sh脚本基础上，新增依赖包配置文件
+### 2、build.sh脚本优化
 
 新增依赖包配置文件维护在另外一个工程里，https://github.com/AUW-su/package-config-test.git
 
 在build.sh执行过程中，会根据配置的信息，对应的工程（集群）会安装其需要的配置的依赖包的版本
+
+实践文档 
+https://app.yinxiang.com/fx/464d8e13-c6c6-4de7-80e9-669e52f3f85a
