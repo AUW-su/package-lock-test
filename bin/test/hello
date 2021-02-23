@@ -1,0 +1,5 @@
+#!/usr/bin/env node
+
+console.log("hello world") 
+
+// npm install vue@2.0.0 --registry https://registry.npm.taobao.org

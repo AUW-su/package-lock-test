@@ -61,7 +61,9 @@ if [ -s "./${folderName}/.config" ]; then
 
     do
     if [[ $line =~ "all" ]] || [[ ! -z $PROJECT_NAME && $line =~ $PROJECT_NAME ]]; then # -z 判断字符串长度是否为0
-    
+
+        echo "***** 需要安装的配置项：$line"
+
         line="$(echo "${line}" | tr -d '[:space:]')" # 去掉空格
 
         IFS=":"
