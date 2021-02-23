@@ -18,6 +18,8 @@
   },
   "homepage": "https://github.com/AUW-su/package-lock-test#readme",
   "devDependencies": {
-    "react": "^15.1.0"
+    "react": "^15.1.0",
+    "core-js": "^3.4.0",
+    "fbjs": "^1.0.0"
   }
 }
